@@ -1,10 +1,11 @@
-from cudaDistanceMatrix import DistanceMatrix
+from cudaDistanceMatrix.cudaDistanceMatrix import DistanceMatrix
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
 #It is possible to retrieve the full distance matrix if necessary.
-n = 200
+n = 10000
 X = np.random.rand(n, n).astype(np.float32)
+print(X)
 
 #Initialize DistanceMatrix object and calculate the distance matrix.
 

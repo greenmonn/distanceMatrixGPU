@@ -2,10 +2,14 @@ import h5py
 import numpy as np
 from skcuda import linalg, misc
 import pycuda.autoinit
+from pycuda.compiler import SourceModule
 import pycuda.gpuarray as gpuarray
 linalg.init()
 from numpy.linalg import norm
 import os.path
+
+cuda_driver = pycuda.driver.init()
+pycuda.driver.Device(0).retain_primary_context()
 
 from .fillArrayNumbaFloat32 import cudaFillFlattenArray32, cudaFillFullArray32
 
